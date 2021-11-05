@@ -1,0 +1,24 @@
+org: bachdo
+app: aws-serverless-htw
+service: aws-serverless-htw
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  iamRoleStatements:
+    -  Effect: "Allow"
+       Action:
+         - "s3:ListBucket"
+       Resource:
+         Fn::Join:
+           - ""
+           - - "arn:aws:s3:::htwprojectdata"
+  runtime: nodejs12.x
+  stage: dev
+  lambdaHashingVersion: '20201221'
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi: '*'

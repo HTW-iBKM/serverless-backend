@@ -1,0 +1,11 @@
+{
+  "name": "aws-serverless-htw",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "aws-sdk": "^2.1021.0",
+    "csvtojson": "^2.0.10",
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0"
+  }
+}
