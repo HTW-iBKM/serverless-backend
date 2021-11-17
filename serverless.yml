@@ -22,3 +22,6 @@ functions:
     handler: handler.handler
     events:
       - httpApi: '*'
+
+plugins:
+  - serverless-offline
