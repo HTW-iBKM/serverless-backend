@@ -6,6 +6,7 @@ const AWS = require('aws-sdk');
 const S3 = new AWS.S3();
 
 app.get("/", async (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const response = await S3.listObjectsV2({
     Bucket: 'htwprojectdata',
     Prefix: 'data'
