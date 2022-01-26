@@ -8,14 +8,15 @@ provider:
   iamRoleStatements:
     -  Effect: "Allow"
        Action:
-         - "s3:ListBucket"
+         - "s3:*"
        Resource:
-         Fn::Join:
-           - ""
-           - - "arn:aws:s3:::htwprojectdata"
+           - "arn:aws:s3:::ibkm-htw-data"
+           - "arn:aws:s3:::ibkm-htw-data/*"
   runtime: nodejs12.x
   stage: dev
+  region: eu-west-1
   lambdaHashingVersion: '20201221'
+
 
 functions:
   api:

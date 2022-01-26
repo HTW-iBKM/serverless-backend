@@ -15,7 +15,7 @@ app.get("/", async (req, res, next) => {
 
 
   // console.log(response)
-  let stream = S3.getObject({ Bucket: 'htwprojectdata/data', Key: 'explainer_normalized_target.csv' }).createReadStream();
+  let stream = S3.getObject({ Bucket: 'ibkm-htw-data', Key: 'explainer_normalized_target.csv' }).createReadStream();
   let data = await csv().fromStream(stream);
   data = transformData(data);
   console.log(data.length);

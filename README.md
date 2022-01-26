@@ -61,7 +61,7 @@ resources: 12
 api keys:
   None
 endpoints:
-  ANY - https://6ys8ajad27.execute-api.us-east-1.amazonaws.com/
+  ANY - https://bk4lqamoq9.execute-api.eu-west-1.amazonaws.com//
 functions:
   api: aws-node-express-api-dev-api
 layers:
@@ -75,7 +75,7 @@ _Note_: In current form, after deployment, your API is public and can be invoked
 After successful deployment, you can call the created application via HTTP:
 
 ```bash
-curl https://6ys8ajad27.execute-api.us-east-1.amazonaws.com/
+curl https://bk4lqamoq9.execute-api.eu-west-1.amazonaws.com/
 ```
 
 Which should result in the following response:
@@ -87,7 +87,7 @@ Which should result in the following response:
 Calling the `/hello` path with:
 
 ```bash
-curl https://6ys8ajad27.execute-api.us-east-1.amazonaws.com/hello
+curl https://bk4lqamoq9.execute-api.eu-west-1.amazonaws.com/hello
 ```
 
 Should result in the following response:
@@ -99,7 +99,7 @@ Should result in the following response:
 If you try to invoke a path or method that does not have a configured handler, e.g. with:
 
 ```bash
-curl https://6ys8ajad27.execute-api.us-east-1.amazonaws.com/nonexistent
+curl https://bk4lqamoq9.execute-api.eu-west-1.amazonaws.com/nonexistent
 ```
 
 You should receive the following response:
