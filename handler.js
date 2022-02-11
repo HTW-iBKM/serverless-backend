@@ -7,14 +7,12 @@ const S3 = new AWS.S3();
 
 app.get("/", async (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  //
+  
   // const response = await S3.listObjectsV2({
   //   Bucket: 'htwprojectdata',
   //   Prefix: 'data'
   // }).promise();
 
-
-  // console.log(response)
   let stream = S3.getObject({ Bucket: 'ibkm-htw-data', Key: 'explainer_normalized_target.csv' }).createReadStream();
   let data = await csv().fromStream(stream);
   data = transformData(data);
@@ -34,8 +32,7 @@ app.get("/", async (req, res, next) => {
   //   obj[name] = json;
   //   Object.assign(data, obj);
   // }
-
-  // console.log(data);
+  
   return res.json(data)
 });
 
@@ -84,13 +81,6 @@ function calculateAggregationAttributes(json) {
     return { ...obj, sumFeature, day_hour, weekday, sun, pressure }
   });
 }
-
-
-app.get("/hello", (req, res, next) => {
-  return res.status(200).json({
-    message: "Hello from path!",
-  });
-});
 
 app.use((req, res, next) => {
   return res.status(404).json({
